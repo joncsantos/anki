@@ -1,0 +1,274 @@
+/* public/css/style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+main {
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+    padding: 20px;
+    max-width: 800px; /* Limita a largura máxima para desktops */
+    margin: 25px auto; /* Centraliza na tela */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 35px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #0056b3;
+    margin-top: 0;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+textarea {
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px; /* Altura mínima para a textarea */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+.message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    display: none; /* Escondido por padrão */
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 40px 0;
+}
+
+/* Estilos para o Card de Revisão */
+.card-container {
+    display: flex;
+    flex-direction: column; /* Organiza itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 250px; /* Garante altura mínima para o card */
+    margin-bottom: 25px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    width: 100%;
+    max-width: 450px; /* Largura máxima para o card */
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-front, .card-back {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    word-wrap: break-word; /* Garante que textos longos quebrem a linha */
+}
+
+.card-back {
+    color: #555;
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.show-back-btn {
+    background-color: #007bff;
+    margin-top: 15px;
+    width: 80%; /* Ajusta a largura do botão "Mostrar Verso" */
+    max-width: 250px;
+}
+
+.review-controls {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.review-controls button {
+    flex: 1 1 auto; /* Permite que os botões se estiquem e encolham */
+    min-width: 130px; /* Largura mínima para os botões */
+    padding: 12px 10px;
+    font-size: 0.95rem;
+    background-color: #6c757d; /* Cor padrão para os botões de controle */
+    transition: background-color 0.2s ease;
+}
+
+.review-controls button:hover {
+    transform: translateY(-1px);
+}
+
+/* Cores diferentes para os botões de qualidade (melhora a UX) */
+.review-controls button[data-quality="0"] { background-color: #dc3545; } /* Esqueci */
+.review-controls button[data-quality="1"] { background-color: #fd7e14; } /* Muito difícil */
+.review-controls button[data-quality="2"] { background-color: #ffc107; color: #333; } /* Difícil */
+.review-controls button[data-quality="3"] { background-color: #28a745; } /* Bom */
+.review-controls button[data-quality="4"] { background-color: #20c997; } /* Muito bom */
+.review-controls button[data-quality="5"] { background-color: #007bff; } /* Fácil */
+
+/* Responsividade para telas menores (mobile-first) */
+@media (max-width: 768px) {
+    main {
+        margin: 15px;
+        padding: 15px;
+        box-shadow: none; /* Remove a sombra em telas menores para um look mais limpo */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 20px;
+        min-height: 150px;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-front, .card-back {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .card-back {
+        font-size: 1.1rem;
+    }
+
+    .show-back-btn {
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .review-controls button {
+        flex: 1 1 45%; /* Duas colunas em telas menores */
+        font-size: 0.9rem;
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-controls button {
+        flex: 1 1 100%; /* Uma coluna em telas muito pequenas */
+        margin-bottom: 8px; /* Espaçamento entre os botões na coluna única */
+    }
+}

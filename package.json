@@ -1,0 +1,24 @@
+{
+  "name": "Anki-app",
+  "version": "1.0.0",
+  "description": "Um aplicativo Anki responsivo para mobile",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "anki",
+    "flashcards",
+    "nodejs",
+    "express",
+    "postgresql",
+    "supabase"
+  ],
+  "author": "Seu Nome",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.11.5"
+  }
+}
